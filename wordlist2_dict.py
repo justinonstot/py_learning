@@ -2,7 +2,7 @@ import os.path
 from os import path
 
 file_path = "C:\\Users\\justino\\OneDrive\\repos\\py_learning\\"
-file_name = "words.txt"
+file_name = "romeo.txt"
 myfile = file_path + file_name
 lineWords = []
 wordList = dict()
@@ -20,13 +20,16 @@ try:
     searchWord = input("Select word to check for: ")
     print("The word you search for is: " + searchWord)
 
-    print(searchWord in wordList)
+    if searchWord in wordList:
+        print('"' + searchWord + '" was found in the text.')
+    else:
+        print('"' + searchWord + '" was  NOT FOUND in the text.')
 
 
         
 
 except FileNotFoundError:
-    print('\nFile is not found\n')
+    print('\nFile is not found: ', myfile)
 
 except:
     print('\nSomething went wrong and we had to bail\n')
